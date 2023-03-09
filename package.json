@@ -1,0 +1,26 @@
+{
+  "name": "appointments",
+  "version": "1.0.0",
+  "description": "Following the book examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpateev/TDD-appointments.git"
+  },
+  "keywords": [
+    "TDD",
+    "appointments"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpateev/TDD-appointments/issues"
+  },
+  "homepage": "https://github.com/mpateev/TDD-appointments#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
