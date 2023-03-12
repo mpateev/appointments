@@ -5,9 +5,7 @@ import { act } from "react-dom/test-utils"
 import { Appointment, AppointmentsDayView } from "../src/Appointment"
 
 describe("Appointment", () => {
-
     let container
-
     beforeEach(() => {
         container = document.createElement("div")
         document.body.replaceChildren(container)
@@ -66,24 +64,23 @@ describe("AppointmentsDayView", () => {
     })
 
     it("renders an li for each appointment", () => {
-
-        render(
-            <AppointmentsDayView appointments={twoAppointments} />
-        )
-
+        render( <AppointmentsDayView appointments={twoAppointments} />)
         const listChildren = document.querySelectorAll("ol > li")
         expect(listChildren).toHaveLength(2)
     })
 
     it("renders the time of each appointment", () => {
-
-        render(
-            <AppointmentsDayView appointments={twoAppointments} />
-        )
-
+        render( <AppointmentsDayView appointments={twoAppointments} />)
         const listChildren = 
             document.querySelectorAll("li")
             expect(listChildren[0].textContent).toEqual("12:00")
             expect(listChildren[1].textContent).toEqual("13:00")
     })
+
+    it("initially shows a message saying there are no appointments today", () => {
+        render(<AppointmentsDayView appointments={[]} />);
+        expect(document.body.textContent).toContain(
+            "There are no appointments scheduled for today."
+            );
+    });
 })
